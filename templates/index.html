@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Python Flask Quiz</title>
+        <style>
+            body {
+            margin: 0;
+            padding-bottom: 50px; /* Adjust to accommodate footer height */
+            padding-left: 25px;
+            }
+            footer {
+                padding: 10px;
+                text-align: center;
+                position: fixed;
+                bottom: 0;
+                width: 100%;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>'AI Development in Python' Quiz</h1>
+        <br>
+        <h3>This quiz contains 4 questions and each question is worth 25 points. Avoid using punctuation marks when answering the fourth question, write the answer directly.</h3>
+
+        <div style="position: absolute; top: 10px; right: 10px;">
+            <p>Best Score: {{ best_score }}/100</p>
+        </div>
+
+        <form method="POST" autocomplete="off">
+            <!-- Multiple Choice Question 1 -->
+            <label for="question1">Which Python library is used for numerical computations and provides support for arrays?</label>
+            <br>
+            <input type="radio" id="q1a1" name="question1" value="q1a1">
+            <label for="q1a1">OpenCV</label><br>
+            <input type="radio" id="q1a2" name="question1" value="q1a2">
+            <label for="q1a2">NumPy</label><br>
+            <input type="radio" id="q1a3" name="question1" value="q1a3">
+            <label for="q1a3">Matplotlib</label><br>
+            <input type="radio" id="q1a4" name="question1" value="q1a4">
+            <label for="q1a4">Seaborn</label><br><br>
+            
+            <!-- Multiple Choice Question 2 -->
+            <label for="question2">What does the term 'epoch' refer to in training neural networks?</label>
+            <br>
+            <input type="radio" id="q2a1" name="question2" value="q2a1">
+            <label for="q2a1">A single forward and backward pass of all training examples.</label><br>
+            <input type="radio" id="q2a2" name="question2" value="q2a2">
+            <label for="q2a2">The number of hidden layers in the network.</label><br>
+            <input type="radio" id="q2a3" name="question2" value="q2a3">
+            <label for="q2a3">The number of neurons in a layer.</label><br>
+            <input type="radio" id="q2a4" name="question2" value="q2a4">
+            <label for="q2a4">The learning rate of the model.</label><br><br>
+            
+            <!-- Multiple Choice Question 3 -->
+            <label for="question3">What is the primary use of the Pandas library in Python?</label>
+            <br>
+            <input type="radio" id="q3a1" name="question3" value="q3a1">
+            <label for="q3a1">Data Manipulation and Analysis</label><br>
+            <input type="radio" id="q3a2" name="question3" value="q3a2">
+            <label for="q3a2">Image Processing</label><br>
+            <input type="radio" id="q3a3" name="question3" value="q3a3">
+            <label for="q3a3">Machine Learning</label><br>
+            <input type="radio" id="q3a4" name="question3" value="q3a4">
+            <label for="q3a4">Web Development</label><br><br>
+            
+            <!-- Text Question -->
+            <label for="question4">What technique in Python is commonly used to preprocess text data by converting words into numerical representations?</label>
+            <br>
+            <input type="text" id="question4" name="question4"><br><br>
+            
+            <input type="submit" value="Submit">
+        </form>
+
+        {% if request.method == "POST" %}
+            <h2>Your Score: {{ score }}/100</h2>
+        {% endif %}
+
+        <footer>
+            <p>Ahmet Refik Şener</p>
+        </footer>
+
+    </body>
+</html>
